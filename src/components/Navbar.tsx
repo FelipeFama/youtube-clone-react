@@ -43,10 +43,14 @@ export default function Navbar() {
       <IoAppsSharp />
       <div className="relative">
         <BsBell />
+        <span className="absolute bottom-2 left-2 text-xs bg-red-600 rounded-full px-1">
+         9+
+        </span>
       </div>
-      <span className="absolute bottom-2 left-2 text-xs bg-red-600 rounded-full px-1">
-        9+
-      </span>
+      <img 
+      src="https://lh3.googleusercontent.com/a/ALm5wu2vnWt9OvEI7t3RDEW20Ej3ZAKkqCg2piMKLW7oGA=s288-p-rw-no" 
+      className="w-9 h-9 rounded-full"
+      alt="youtube-profile" />
      </div>
    </nav>
   );
