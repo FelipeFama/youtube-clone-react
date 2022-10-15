@@ -14,14 +14,14 @@ export const parseData = async (items: any[]) => {
     const videoIds: string[] = [];
     const channelIds: string[] = [];
     items.forEach(
-      (item: { snippet: { channelId: string}; id: { videoId: string} }) => {
+      (item: { snippet: { channelId: string }; id: { videoId: string } }) => {
         channelIds.push(item.snippet.channelId);
         videoIds.push(item.id.videoId);
       }
     );
 
     const {
-      data: { items: channelsData},
+      data: { items: channelsData },
     } = await axios.get(
       `${YOUTUBE_API_URL}/channels?part=snippet,contentDetails&id=${channelIds.join(
         ","
@@ -34,10 +34,10 @@ export const parseData = async (items: any[]) => {
         id: string;
         snippet: { thumbnails: { default: { url: string } } };
       }) =>
-      parsedChannelsData.push({
-        id: channel.id,
-        image: channel.snippet.thumbnails.default.url,
-      })
+        parsedChannelsData.push({
+          id: channel.id,
+          image: channel.snippet.thumbnails.default.url,
+        })
     );
 
     const {
@@ -55,7 +55,7 @@ export const parseData = async (items: any[]) => {
             channelId: string;
             title: string;
             description: string;
-            thumbnails: { medium: {url: string } };
+            thumbnails: { medium: { url: string } };
             publishedAt: Date;
             channelTitle: string;
           };
@@ -67,25 +67,25 @@ export const parseData = async (items: any[]) => {
           (data) => data.id === item.snippet.channelId
         )!;
         if (channelImage)
-        parsedData.push({
-          videoId: item.id.videoId,
-          videoTitle: item.snippet.title,
-          videoDescription: item.snippet.description,
-          videoThumbnail: item.snippet.thumbnails.medium.url,
-          videoLink: `https://www.youtube.com/watch?v=${item.id.videoId}`,
-          videoDuration: parseVideoDuration(
-            videosData[index].contentDetails.duration
-          ),
-          videoViews: convertRawViewsToString(
-            videosData[index].statistics.viewCount
-          ),
-          videoAge: timeSince(new Date(item.snippet.publishedAt)),
-          channelInfo: {
-            id: item.snippet.channelId,
-            image: channelImage,
-            name: item.snippet.channelTitle,
-          },
-        });
+          parsedData.push({
+            videoId: item.id.videoId,
+            videoTitle: item.snippet.title,
+            videoDescription: item.snippet.description,
+            videoThumbnail: item.snippet.thumbnails.medium.url,
+            videoLink: `https://www.youtube.com/watch?v=${item.id.videoId}`,
+            videoDuration: parseVideoDuration(
+              videosData[index].contentDetails.duration
+            ),
+            videoViews: convertRawViewsToString(
+              videosData[index].statistics.viewCount
+            ),
+            videoAge: timeSince(new Date(item.snippet.publishedAt)),
+            channelInfo: {
+              id: item.snippet.channelId,
+              image: channelImage,
+              name: item.snippet.channelTitle,
+            },
+          });
       }
     );
 
