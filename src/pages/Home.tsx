@@ -10,6 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(getHomePageVideos(false));
+    console.log(videos)
   }, [dispatch]);
   
   return (
