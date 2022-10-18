@@ -1,6 +1,6 @@
 import React from "react";
-import { 
-  MdHomeFilled, 
+import {
+  MdHomeFilled,
   MdOutlineSlowMotionVideo,
   MdSubscriptions,
   MdOutlineVideoLibrary,
@@ -13,7 +13,7 @@ import {
   MdOutlineHelpOutline,
   MdOutlineFeedback,
   MdOutlineSportsBasketball,
-  MdSmartDisplay,
+  MdSmartDisplay
 } from "react-icons/md";
 import { TbMusic, TbDeviceGamepad2 } from "react-icons/tb";
 import { FaRegCompass } from "react-icons/fa";
@@ -21,82 +21,82 @@ import { GiFilmStrip } from "react-icons/gi";
 export default function Sidebar() {
   const mainLinks = [
     {
-      icon:<MdHomeFilled className="text-xl" />,
-      name: "Home",
+      icon: <MdHomeFilled className="text-xl" />,
+      name: "Home"
     },
     {
-      icon:<FaRegCompass className="text-xl" />,
-      name: "Explore",
+      icon: <FaRegCompass className="text-xl" />,
+      name: "Explore"
     },
     {
-      icon:<MdOutlineSlowMotionVideo className="text-xl" />,
-      name: "Shorts",
+      icon: <MdOutlineSlowMotionVideo className="text-xl" />,
+      name: "Shorts"
     },
     {
-      icon:<MdSubscriptions className="text-xl" />,
-      name: "Subscriptions",
-    },
+      icon: <MdSubscriptions className="text-xl" />,
+      name: "Subscriptions"
+    }
   ];
 
   const secondaryLinks = [
     {
-      icon: <MdOutlineVideoLibrary className="text-xl"/>,
-      name: "Library",
+      icon: <MdOutlineVideoLibrary className="text-xl" />,
+      name: "Library"
     },
     {
-      icon: <MdHistory className="text-xl"/>,
-      name: "History",
+      icon: <MdHistory className="text-xl" />,
+      name: "History"
     },
     {
-      icon: <MdOutlineSmartDisplay className="text-xl"/>,
-      name: "Your Videos",
+      icon: <MdOutlineSmartDisplay className="text-xl" />,
+      name: "Your Videos"
     },
     {
-      icon: <MdOutlineWatchLater className="text-xl"/>,
-      name: "Watch Later",
+      icon: <MdOutlineWatchLater className="text-xl" />,
+      name: "Watch Later"
     },
     {
-      icon: <MdThumbUpOffAlt className="text-xl"/>,
-      name: "Liked Videos",
-    },
+      icon: <MdThumbUpOffAlt className="text-xl" />,
+      name: "Liked Videos"
+    }
   ];
 
   const subscriptionLinks = [
     {
-      icon: <TbMusic className="text-xl"/>,
-      name: "Music",
+      icon: <TbMusic className="text-xl" />,
+      name: "Music"
     },
     {
-      icon: <MdOutlineSportsBasketball className="text-xl"/>,
-      name: "Sport",
+      icon: <MdOutlineSportsBasketball className="text-xl" />,
+      name: "Sport"
     },
     {
-      icon: <TbDeviceGamepad2 className="text-xl"/>,
-      name: "Gaming",
+      icon: <TbDeviceGamepad2 className="text-xl" />,
+      name: "Gaming"
     },
     {
-      icon: <GiFilmStrip className="text-xl"/>,
-      name: "Films",
-    },
+      icon: <GiFilmStrip className="text-xl" />,
+      name: "Films"
+    }
   ];
 
   const helpLinks = [
     {
-      icon: <MdSettings className="text-xl"/>,
-      name: "Settings",
+      icon: <MdSettings className="text-xl" />,
+      name: "Settings"
     },
     {
-      icon: <MdOutlineFlag className="text-xl"/>,
-      name: "Report History",
+      icon: <MdOutlineFlag className="text-xl" />,
+      name: "Report History"
     },
     {
-      icon: <MdOutlineHelpOutline className="text-xl"/>,
-      name: "Help",
+      icon: <MdOutlineHelpOutline className="text-xl" />,
+      name: "Help"
     },
     {
-      icon: <MdOutlineFeedback className="text-xl"/>,
-      name: "Send Feedback",
-    },
+      icon: <MdOutlineFeedback className="text-xl" />,
+      name: "Send Feedback"
+    }
   ];
 
   const textLinks = [
@@ -107,15 +107,15 @@ export default function Sidebar() {
       "Contact us",
       "Creator",
       "Advertise",
-      "Developers",
+      "Developers"
     ],
     [
       "Terms",
       "Privacy",
       "Policy e Safety",
       "How Youtube works",
-      "Test new features",
-    ],
+      "Test new features"
+    ]
   ];
 
   return (
@@ -123,16 +123,17 @@ export default function Sidebar() {
       <ul className="flex flex-col border-b-2 border-gray-700">
         {mainLinks.map(({ icon, name }) => {
           return (
-            <li 
-             key={name}
-             className={`pl-6 py-3 hover:bg-zinc-600 ${
-              name === "Home" ? "bg-slate-600" : ""
-             }`}>
+            <li
+              key={name}
+              className={`pl-6 py-3 hover:bg-zinc-600 ${
+                name === "Home" ? "bg-slate-600" : ""
+              }`}
+            >
               <a href="#" className="flex items-center gap-5">
                 {icon}
                 <span className="text-sm tracking-wider">{name}</span>
               </a>
-             </li>
+            </li>
           );
         })}
       </ul>
@@ -144,7 +145,7 @@ export default function Sidebar() {
                 {icon}
                 <span className="text-sm tracking-wider">{name}</span>
               </a>
-             </li>
+            </li>
           );
         })}
       </ul>
@@ -156,7 +157,7 @@ export default function Sidebar() {
                 {icon}
                 <span className="text-sm tracking-wider">{name}</span>
               </a>
-             </li>
+            </li>
           );
         })}
       </ul>
@@ -168,23 +169,23 @@ export default function Sidebar() {
                 {icon}
                 <span className="text-sm tracking-wider">{name}</span>
               </a>
-             </li>
+            </li>
           );
         })}
       </ul>
       <ul className="flex gap-2 flex-wrap text-sm p-4 text-zinc-400">
-        {textLinks[0].map((name) => {
-          return <li key={name}>{name}</li>
+        {textLinks[0].map(name => {
+          return <li key={name}>{name}</li>;
         })}
       </ul>
       <ul className="flex gap-2 flex-wrap text-sm p-4 text-zinc-400">
-        {textLinks[1].map((name) => {
-          return <li key={name}>{name}</li>
+        {textLinks[1].map(name => {
+          return <li key={name}>{name}</li>;
         })}
       </ul>
       <span className="px-4 text-sm text-zinc-400">&copy; 2022 Google</span>
       <p className="px-4 pt-3 text-sm text-zinc-400">
-       The clone is for study purposes only.
+        The clone is for study purposes only.
       </p>
     </nav>
   );

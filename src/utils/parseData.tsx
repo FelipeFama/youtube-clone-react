@@ -2,7 +2,7 @@ import axios from "axios";
 import {
   convertRawViewsToString,
   parseVideoDuration,
-  timeSince,
+  timeSince
 } from "./index";
 import { YOUTUBE_API_URL } from "./constants";
 import { HomePageVideos } from "../Types";
@@ -21,7 +21,7 @@ export const parseData = async (items: any[]) => {
     );
 
     const {
-      data: { items: channelsData },
+      data: { items: channelsData }
     } = await axios.get(
       `${YOUTUBE_API_URL}/channels?part=snippet,contentDetails&id=${channelIds.join(
         ","
@@ -36,12 +36,12 @@ export const parseData = async (items: any[]) => {
       }) =>
         parsedChannelsData.push({
           id: channel.id,
-          image: channel.snippet.thumbnails.default.url,
+          image: channel.snippet.thumbnails.default.url
         })
     );
 
     const {
-      data: { items: videosData },
+      data: { items: videosData }
     } = await axios.get(
       `${YOUTUBE_API_URL}/videos?part=contentDetails,statistics&id=${videoIds.join(
         ","
@@ -64,7 +64,7 @@ export const parseData = async (items: any[]) => {
         index: number
       ) => {
         const { image: channelImage } = parsedChannelsData.find(
-          (data) => data.id === item.snippet.channelId
+          data => data.id === item.snippet.channelId
         )!;
         if (channelImage)
           parsedData.push({
@@ -83,8 +83,8 @@ export const parseData = async (items: any[]) => {
             channelInfo: {
               id: item.snippet.channelId,
               image: channelImage,
-              name: item.snippet.channelTitle,
-            },
+              name: item.snippet.channelTitle
+            }
           });
       }
     );

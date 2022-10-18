@@ -2,7 +2,7 @@ import React from "react";
 import { HomePageVideos } from "../Types";
 import { Link } from "react-router-dom";
 
-export default function Card({ data }: { data: HomePageVideos}) {
+export default function Card({ data }: { data: HomePageVideos }) {
   return (
     <div className="w-64 h-60 flex gap-3 flex-col">
       <div className="relative">
@@ -10,20 +10,20 @@ export default function Card({ data }: { data: HomePageVideos}) {
           {data.videoDuration}
         </span>
         <Link to={`/watch/${data.videoId}`}>
-         <img 
-           src={data.videoThumbnail}
-           className="h-44 w-72"
-           alt="thumbnail"
+          <img
+            src={data.videoThumbnail}
+            className="h-44 w-72"
+            alt="thumbnail"
           />
         </Link>
       </div>
       <div className="flex gap-2">
         <div className="min-w-fit">
           <a href="#">
-            <img 
-             src={data.channelInfo.image}
-             alt="channel"
-             className="h-9 w-9 rounded-full"
+            <img
+              src={data.channelInfo.image}
+              alt="channel"
+              className="h-9 w-9 rounded-full"
             />
           </a>
         </div>

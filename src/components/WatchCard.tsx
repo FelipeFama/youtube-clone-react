@@ -2,17 +2,17 @@ import React from "react";
 import { RecommendedVideos } from "../Types";
 import { Link } from "react-router-dom";
 
-export default function SearchCard({ data }: { data: RecommendedVideos }) {
+export default function WatchCard({ data }: { data: RecommendedVideos }) {
   return (
     <div className="flex gap-3">
-      <div className="relative">
+      <div className="relative min-w-fit">
         <span className="absolute bottom-3 right-3 text-sm bg-gray-900 px-2 py-0.5 z-10">
           {data.videoDuration}
         </span>
         <Link to={`/watch/${data.videoId}`}>
           <img
             src={data.videoThumbnail}
-            className="h-52 w-96"
+            className="h-24 w-40"
             alt="thumbnail"
           />
         </Link>
@@ -25,11 +25,11 @@ export default function SearchCard({ data }: { data: RecommendedVideos }) {
         </h4>
         <div className="text-xs text-grap-400">
           <div>
-            <div>
-              <a href="#" className="hover:text-white">
-                {data.channelInfo.name}
-              </a>
-            </div>
+            <a href="#" className="hover:text-white">
+              {data.channelInfo.name}
+            </a>
+          </div>
+          <div>
             <div>
               <span className="after:content-['•'] after:mx-1">
                 {data.videoViews} views
