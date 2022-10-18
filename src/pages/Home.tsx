@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
@@ -29,7 +29,7 @@ export default function Home() {
       next={() => dispatch(getHomePageVideos(true))}
       hasMore={videos.length < 500}
       loader={<Spinner />}
-      height={750}
+      height={650}
       >
         <section className="grid gap-y-14 gap-x-8 grid-cols-4 p-8">
          {videos.map((item: HomePageVideos) => {

@@ -7,16 +7,16 @@ import { YOUTUBE_API_URL } from "../../utils/constants";
 
 const API_KEY = import.meta.env.VITE_YOUTUBE_CLONE_REACT_API_KEY;
 
-export const getHomePageVideos = createAsyncThunk(
-  "youtubeApp/homePageVideos", 
+export const getSearchPageVideos = createAsyncThunk(
+  "youtubeApp/searchPageVideos", 
   async (isNext: boolean, { getState }) => {
     const {
-      youtubeApp: { nextPageToken: nextPageTokenFromState, videos },
+      youtubeApp: { nextPageToken: nextPageTokenFromState, videos, searchTerm },
     } = getState() as RootState;
     const {
       data: { items, nextPageToken },
     } = await axios.get(
-      `${YOUTUBE_API_URL}/search?maxResults=20&q="reactjs projects"&key=${API_KEY}&part=snippet&type=video&${isNext ? `pageToken=${nextPageTokenFromState}` : "" 
+      `${YOUTUBE_API_URL}/search?q=${searchTerm}&key=${API_KEY}&part=snippet&type=video&${isNext ? `pageToken=${nextPageTokenFromState}` : "" 
     }`
     );
     const parsedData: HomePageVideos[] = await parseData(items);
