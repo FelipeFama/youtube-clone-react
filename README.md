@@ -17,9 +17,9 @@ npm run dev
 ```
 ## :wrench: Tecnologias utilizadas
 
+- Vite
 - React/Typescript
 - Redux
-- Vite
 - Tailwind-CSS
 - Axios
 - Youtube Api
@@ -27,7 +27,9 @@ npm run dev
 ## :book: Informações do Projeto
 
 - Clone do youtube com React typescript
-
+- Link da API:<a href="https://developers.google.com/youtube/v3"> Youtube </a>
+- Utilização das variáveis de ambiente e axios
+- <a href="https://vitejs.dev/guide/env-and-mode.html#env-variables-and-modes">Configurar variáveis de ambiente no vite</a>
 
 ## :bulb:	Autor: FelipeFama
    Meus links:
